@@ -18,10 +18,10 @@ type ProjectVariablesService struct {
 // GitLab API docs: https://docs.gitlab.com/ce/api/project_level_variables.html#list-project-variables
 type ListProjectVariablesOptions ListOptions
 
-// ListSnippets gets a list of project variables.
+// ListVariables gets a list of project variables.
 //
 // GitLab API docs: https://docs.gitlab.com/ce/api/project_level_variables.html#list-project-variables
-func (s *ProjectVariablesService) ListSnippets(pid interface{}, opt *ListProjectVariablesOptions, options ...OptionFunc) ([]*Variable, *Response, error) {
+func (s *ProjectVariablesService) ListVariables(pid interface{}, opt *ListProjectVariablesOptions, options ...OptionFunc) ([]*Variable, *Response, error) {
 	project, err := parseID(pid)
 	if err != nil {
 		return nil, nil, err
